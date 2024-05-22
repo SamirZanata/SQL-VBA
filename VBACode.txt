@@ -1,0 +1,14 @@
+Function RemoveAcentos(txt As String) As String
+    Dim Acentos As String
+    Dim SemAcentos As String
+    Dim i As Integer
+
+    Acentos = "áàãâäéèêëíìîïóòõôöúùûüçÁÀÃÂÄÉÈÊËÍÌÎÏÓÒÕÔÖÚÙÛÜÇ"
+    SemAcentos = "aaaaaeeeeiiiiooooouuuucAAAAAEEEEIIIIOOOOOUUUUC"
+
+    For i = 1 To Len(Acentos)
+        txt = Replace(txt, Mid(Acentos, i, 1), Mid(SemAcentos, i, 1))
+    Next i
+
+    RemoveAcentos = txt
+End Function
